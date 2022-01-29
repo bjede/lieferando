@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="script/main.js"></script>
+    <title>Lieferando</title>
+</head>
+
+<body onload="renderDishes(), isCartEmpy(), cartButton()">
+    <header class="header">
+        <div class="header__logo">
+            <a class="header__logo-link" href="index.html">
+            </a>
+            <a class="header__logo-link-mobile" href="index.html">
+                <svg class="logo-mobile" viewBox="0 0 32 32" width="1em" height="1em" role="presentation" focusable="false" aria-hidden="true"><path d="M15.117 2.298a1.503 1.503 0 011.796 0 56.974 56.974 0 013.992 2.78s.3.199.4-.199a4.08 4.08 0 01.1-1.489.748.748 0 01.698-.496s1.497.099 2.495.198a.995.995 0 01.798.894s.599 4.17.798 5.66c.21.787.622 1.506 1.198 2.084a41.683 41.683 0 012.495 3.774s.499 1.092-.599 1.191c0 0-2.096.199-2.295.298a.557.557 0 00-.5.596s-.099 7.248-.598 10.822c0 0-.1 1.39-.898 1.39 0 0-2.096-.099-2.595-.099 0 0-.2 0-.2-.298 0 0 1.098-11.319.4-17.078a.993.993 0 00-.6-.893s-.498-.199-.997.496a17.9 17.9 0 00-3.393 10.227c-.065.767.003 1.54.2 2.284 0 0 .2.298 1.097.397l1.098.198s.2 0 .2.298c0 0-.3 3.376-.3 3.972.015.14-.02.28-.1.397a.581.581 0 01-.399.1H13.92a.49.49 0 01-.299-.1c-.1-.198-.3-4.27-.3-4.865 0-.1.1-.199.2-.298a2.977 2.977 0 001.397-2.184 7.755 7.755 0 000-1.887s.2-6.355.2-7.447c0 0 .1-.298-.4-.397a.38.38 0 00-.498.298s-.3 4.27-.3 5.858c0 0 .1 1.092-.598 1.092 0 0-.699.1-.799-.794 0 0 .1-4.07.2-6.156a.428.428 0 00-.4-.397c-.199-.1-.498.1-.498.397 0 0-.3 3.972-.3 5.957 0 0 .1.993-.698.993 0 0-.699.1-.699-.794 0 0 .2-5.66.2-6.057a.457.457 0 00-.4-.496h-.1c-.199 0-.498.1-.498.397v.1s-.32 6.751-.32 8.737a3.599 3.599 0 001.497 2.88c.114.057.19.17.2.297 0 0 .2 3.575.3 4.766 0 0 .1.298-.2.298l-3.793-.199s-.598.1-.798-.695a93.854 93.854 0 01-.698-11.418.557.557 0 00-.5-.596s-1.896-.198-2.395-.298a.824.824 0 01-.598-.993c0-.099.1-.099.1-.198A41.024 41.024 0 0115.116 2.298z" fill-rule="evenodd"></path></svg>
+            </a>
+        </div>
+        <div class="header__location">
+            <span class="location-text">Ziegeleistraße 13, 9020 Klagenfurt</span>
+        </div>
+        <div class="header__banner-container">
+            <img class="language__img" src="img/austria-162233.svg" alt="">
+            <img class="menu__img" src="img/icons/menu_white_24dp.svg" alt="">
+        </div>
+    </header>
+    <main class="main">
+        <section class="restaurant">
+
+            <div class="restaurant__header">
+                <img src="img/daniel-apodaca-sfldz1LjzNY-unsplash.jpg" alt="" class="restaurant__img">
+                <img src="img/logo_465x320.png" alt="" class="restaurant__logo">
+            </div>
+            <div class="container">
+                <div class="heading-section">
+
+                    <div class="restaurant-name">
+                        <h2 class="heading-lg">Fallaloon Restaurant</h2>
+                        <div class="rating-section">
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating-star"></span>
+                            <span class="rating">(2.2K Bewertungen)</span>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="info-container">
+                            <img class="info-icon" src="img/icons/info_black_24dp.svg" alt="">
+                        </div>
+                        <div class="fav-container">
+                            <img class="fav-icon" src="img/icons/favorite_black_24dp.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="category-nav">
+                <div class="container">
+                    <ul class="category-nav__list">
+                        <li class="category-nav__item"><img class="category-nav__icon"
+                                src="img/icons/search_black_24dp.svg" alt=""></li>
+                        <li class="category-nav__item">Beliebte Gerichte</li>
+                        <li class="category-nav__item">Sushie Party-Platten</li>
+                        <li class="category-nav__item">Vorspeisen</li>
+                        <li class="category-nav__item">Suppen</li>
+                        <li class="category-nav__item">Salate</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div id="dishes" class="dishes" style="height: 1000px;">
+                    <h2 class="heading-m heading-grey">Beliebte Gerichte</h2>
+                </div>
+            </div>
+        </section>
+        <aside class="sidebar cart">
+            <div id="sidebar-inner" class="sidebar-inner">
+                <div class="cart-heading__container">
+                    <h2 class="heading-m cart__title">Warenkorb</h2>
+                    <span onclick="closeCart()" class="close-cart"></span>
+                </div>
+                <div class="cart__items">
+                    <div id="cart-item" class="cart__item">
+                    </div>
+                    <div id="summery" class="summery">
+
+                    </div>
+                </div>
+                <div id="cart-btn" class="cart__btn">
+                    <div id="btn-blue" class="btn-container"></div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <section class="cart-mobile">
+        <button onclick="openCart()" id="mobile-btn" class="cart-mobile__btn">Warenkorb</button>
+    </section>
+</body>
+
+</html>
