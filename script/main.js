@@ -56,12 +56,24 @@ function renderDishes() {
             <div class="dish-item__container">
                 <h3 class="heading-s">${dishes[i].title}</h3>
                 <span class="dish-description">${dishes[i].description}</span>
-                <span class="dish-price">${dishes[i].price.toFixed(2)} €</span>
+                <span class="dish-price">${replaceDotToComma(dishes[i].price.toFixed(2))} €</span>
             </div>
             <span class="add-dish__icon"><img src="img/icons/add_black_24dp.svg" alt=""></span>
         </div>
         `;
     }
+}
+
+
+/**
+ * Replace a dot with a comma.
+ * 
+ * @param {number} replaceDot - A number with a dot
+ * @returns - Returns a number with a comma.
+ */
+
+function replaceDotToComma(replaceDot){
+    return replaceDot.toString().replace('.', ',');
 }
 
 
@@ -201,7 +213,7 @@ function cartButton(finalsum) {
     } else {
         document.getElementById('btn-blue').innerHTML =
             `<button class="btn-blue">
-                Bezahlen <span>(${finalsum.toFixed(2)} €)</span>
+                Bezahlen <span>(${replaceDotToComma(finalsum.toFixed(2))} €)</span>
             </button>
         `;
         document.getElementById('cart-btn').style.display = 'flex';
@@ -221,7 +233,7 @@ function createSumHTML(subTotal, finalSum) {
         `<div class="summery-container-inner">
             <div class="summery__container">
                 <span class="summery__text">Zwischensumme</span>
-                <span id="sub-sum" class="summery__total">${subTotal.toFixed(2)} €</span>
+                <span id="sub-sum" class="summery__total">${replaceDotToComma(subTotal.toFixed(2))} €</span>
             </div>
             <div class="summery__container">
                 <span class="summery__text">Lieferkosten</span>
@@ -229,7 +241,7 @@ function createSumHTML(subTotal, finalSum) {
             </div>
             <div class="summery__container">
                 <span class="summery__text"><strong>Gesamt</strong></span>
-                <span class="summery__total"><strong id="summery-total">${finalSum.toFixed(2)} €</strong></span>
+                <span class="summery__total"><strong id="summery-total">${replaceDotToComma(finalSum.toFixed(2))} €</strong></span>
             </div>
         </div>`;
 }
@@ -258,7 +270,7 @@ function amountDishes() {
 /**
  * Decrement dish in the shopping cart 
  *  
- * @param {number} index 
+ * @param {number} index - The index to decrement the correct price in the shopping cart
  */
 
 function decrementDish(index) {
@@ -278,7 +290,7 @@ function decrementDish(index) {
 /**
  * Increment dish in the shopping cart
  * 
- * @param {number} index - The index to increment the right price in the shopping cart
+ * @param {number} index - The index to increment the correct price in the shopping cart
  */
 
 function incrementDish(index) {
@@ -320,7 +332,7 @@ function renderCart() {
                 <span class="cart__quantity"><strong>${dishesCart[i].amount}</strong></span>
                 <div class="cart__item-inner">
                     <span class="cart__dish"><strong>${dishesCart[i].title}</strong></span>
-                    <span class="cart__price">${dishesCart[i].price.toFixed(2)} €</span>
+                    <span class="cart__price">${replaceDotToComma(dishesCart[i].price.toFixed(2))} €</span>
                 </div>
                 <div class="cart__add">
                     <span onclick="deleteDish(${i})" class="delete-dish"></span>
@@ -361,6 +373,7 @@ function closeCart() {
 /**
  * Correct the position of the sidebar when moving or resizing the browser window
  */
+
 function fixSroll() {
     let height = document.querySelector('.header').offsetHeight;
     if (viewportWidth > 1000) {
